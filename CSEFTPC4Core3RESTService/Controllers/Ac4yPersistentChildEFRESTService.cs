@@ -15,42 +15,42 @@ namespace EFRESTService.Controllers
     {
 
         [HttpPost]
-        [Route("/getbyid")]
+        [Route("getbyid")]
         public GetByIdResponse GetById(GetByIdRequest request)
         {
             return new Ac4yPersistentChildEFService().GetById(request);
         }
         
         [HttpPost]
-        [Route("/getbyguid")]
+        [Route("getbyguid")]
         public GetByGuidResponse GetByGuid(GetByGuidRequest request)
         {
             return new Ac4yPersistentChildEFService().GetByGuid(request);
         }
         
         [HttpPost]
-        [Route("/isexistbyid")]
+        [Route("isexistbyid")]
         public IsExistByIdResponse IsExistById(IsExistByIdRequest request)
         {
             return new Ac4yPersistentChildEFService().IsExistById(request);
         }
         
         [HttpPost]
-        [Route("/isexistbyguid")]
+        [Route("isexistbyguid")]
         public IsExistByGuidResponse IsExistByGuid(IsExistByGuidRequest request)
         {
             return new Ac4yPersistentChildEFService().IsExistByGuid(request);
         }
         
         [HttpPost]
-        [Route("/updatebyid")]
+        [Route("updatebyid")]
         public UpdateByIdResponse UpdateById(UpdateByIdRequest request)
         {
             return new Ac4yPersistentChildEFService().UpdateById(request);
         }
         
         [HttpPost]
-        [Route("/updatebyguid")]
+        [Route("updatebyguid")]
         public UpdateByGuidResponse UpdateByGuid(UpdateByGuidRequest request)
         {
             return new Ac4yPersistentChildEFService().UpdateByGuid(request);
@@ -64,7 +64,7 @@ namespace EFRESTService.Controllers
         }
         
         [HttpPost]
-        [Route("/setbyguid")]
+        [Route("setbyguid")]
         public SetByGuidResponse SetByGuid(SetByGuidRequest request)
         {
             return new Ac4yPersistentChildEFService().SetByGuid(request);

@@ -17,11 +17,12 @@ namespace CSEFTPC4Core3RESTService
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http://89.46.75.137:8005")
-                .UseKestrel()
-                .UseStartup<Startup>();
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
 
     }
 }

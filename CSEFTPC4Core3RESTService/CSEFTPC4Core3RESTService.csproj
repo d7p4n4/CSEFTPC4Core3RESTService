@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
@@ -13,6 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="CSEFTPC4Core3Cap">
+      <HintPath>C:\library\LPCsharp\CSEFTPC4Core3Cap.dll</HintPath>
+    </Reference>
     <Reference Include="CSEFTPC4Core3Objects">
       <HintPath>C:\library\LPCsharp\CSEFTPC4Core3Objects.dll</HintPath>
     </Reference>

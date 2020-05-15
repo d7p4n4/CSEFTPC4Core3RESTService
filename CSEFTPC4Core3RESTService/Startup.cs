@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OData.Edm;
+using Newtonsoft.Json.Serialization;
 
 namespace CSEFTPC4Core3RESTService
 {
@@ -32,13 +33,11 @@ namespace CSEFTPC4Core3RESTService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-
-            services.AddControllers().AddNewtonsoftJson();
+            services.AddControllers(mvcOptions =>
+                mvcOptions.EnableEndpointRouting = false);
 
             services.AddOData();
-
-            services.AddMvcCore(action => action.EnableEndpointRouting = false);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.AddCors(options =>
             {
@@ -70,27 +69,24 @@ namespace CSEFTPC4Core3RESTService
 
             app.UseMvc(routeBuilder =>
             {
+                //routeBuilder.EnableDependencyInjection();
                 routeBuilder.Select().Filter().Expand().OrderBy().Count().MaxTop(null);
                 routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
             });
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-
+                       /*
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
                 endpoints.EnableDependencyInjection();
                 endpoints.Select().Filter().Expand().OrderBy().Count().MaxTop(null);
-            });
+            });*/
 
         }
         private IEdmModel GetEdmModel()
         {
             var odataBuilder = new ODataConventionModelBuilder();
             odataBuilder.EntitySet<Ac4yPersistentChild>("Ac4yPersistentChilds");
+            odataBuilder.EntitySet<Ac4yPersistentChild>("Ac4yOData");
 
             return odataBuilder.GetEdmModel();
         }

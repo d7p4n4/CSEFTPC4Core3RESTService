@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CSEFTPC4Core3Cap;
 using CSEFTPC4Core3Objects.Ac4yObjects;
 using CSEFTPC4Core3ObjectService.ObjectServices;
 using Microsoft.AspNet.OData;
@@ -11,17 +12,16 @@ using static CSEFTPC4Core3ObjectService.ObjectServices.Ac4yPersistentChildEFServ
 
 namespace CSEFTPC4Core3RESTService.Controllers
 {
-    [Route("odata/[controller]")]
+    //[Route("odata/[controller]")]
     public class Ac4yODataController : ODataController
     {
         [HttpGet]
         [EnableQuery]
-        public IActionResult GetAc4yPersistentChildList()
+        public IEnumerable<Ac4yPersistentChild> Get()
         {
-
-            return Ok(new Ac4yPersistentChildEFService().GetList(new Ac4yPersistentChildEFService.GetListRequest()).Ac4yPersistentChilds);
+            return new Ac4yPersistentChildEFService().GetList(new Ac4yPersistentChildEFService.GetListRequest()).Ac4yPersistentChilds;
         }
-
+        
         [HttpDelete]
         [EnableQuery]
         public IActionResult DeleteAc4yPersistentChild([FromBody] DeleteByIdRequest request)

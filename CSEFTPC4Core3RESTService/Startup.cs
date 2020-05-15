@@ -73,14 +73,6 @@ namespace CSEFTPC4Core3RESTService
                 routeBuilder.Select().Filter().Expand().OrderBy().Count().MaxTop(null);
                 routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
             });
-                       /*
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-                endpoints.EnableDependencyInjection();
-                endpoints.Select().Filter().Expand().OrderBy().Count().MaxTop(null);
-            });*/
-
         }
         private IEdmModel GetEdmModel()
         {

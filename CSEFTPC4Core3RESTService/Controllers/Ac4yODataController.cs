@@ -12,7 +12,6 @@ using static CSEFTPC4Core3ObjectService.ObjectServices.Ac4yPersistentChildEFServ
 
 namespace CSEFTPC4Core3RESTService.Controllers
 {
-    //[Route("odata/[controller]")]
     public class Ac4yODataController : ODataController
     {
         [HttpGet]
@@ -24,23 +23,30 @@ namespace CSEFTPC4Core3RESTService.Controllers
         
         [HttpDelete]
         [EnableQuery]
-        public IActionResult DeleteAc4yPersistentChild([FromBody] DeleteByIdRequest request)
+        public IActionResult Delete([FromODataUri] int key)
         {
-            return Ok(new Ac4yPersistentChildEFService().DeleteById(request));
+            return Ok(new Ac4yPersistentChildEFService().DeleteById(new DeleteByIdRequest() { Id = key }));
         }
 
         [HttpPatch]
         [EnableQuery]
-        public IActionResult UpdateAc4yPersistentChild([FromBody] UpdateByIdRequest request)
+        public IActionResult Patch([FromODataUri] int key, [FromBody] Delta<Ac4yPersistentChild> request)
         {
-            return Ok(new Ac4yPersistentChildEFService().UpdateById(request));
+            UpdateByIdResponse response =
+                new Ac4yPersistentChildEFService().UpdateById(new UpdateByIdRequest()
+                {
+                    Id = key,
+                    Ac4yPersistentChild = request.GetInstance()
+                }); 
+
+            return Ok(response);
         }
         
         [HttpPost]
         [EnableQuery]
-        public InsertResponse Insert([FromBody] InsertRequest request)
+        public InsertResponse Post([FromBody] Ac4yPersistentChild ac4yPersistentChild)
         {
-            return new Ac4yPersistentChildEFService().Insert(request);
+            return new Ac4yPersistentChildEFService().Insert(new InsertRequest() { Ac4yPersistentChild = ac4yPersistentChild });
         }
     }
 }

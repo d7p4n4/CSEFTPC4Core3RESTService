@@ -24,13 +24,11 @@
     ".NETCoreApp,Version=v3.1": {
       "CSEFTPC4Core3RESTService/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Core": "5.2.7",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.3",
           "Microsoft.AspNetCore.OData": "7.4.0",
           "Microsoft.EntityFrameworkCore": "3.1.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.4",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.2",
-          "CSEFTPC4Core3Cap": "1.0.0.0",
           "CSEFTPC4Core3Objects": "1.0.0.0",
           "CSEFTPC4Core3ObjectService": "1.0.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -308,35 +306,6 @@
         },
         "compile": {
           "CSEFTPC4Core3RESTService.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.Client/5.2.7": {
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
-          "Newtonsoft.Json.Bson": "1.0.2"
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
-            "assemblyVersion": "5.2.7.0",
-            "fileVersion": "5.2.61128.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.Core/5.2.7": {
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.7"
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.dll": {
-            "assemblyVersion": "5.2.7.0",
-            "fileVersion": "5.2.61128.0"
-          }
-        },
-        "compile": {
-          "lib/net45/System.Web.Http.dll": {}
         }
       },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -2236,17 +2205,6 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "CSEFTPC4Core3Cap/1.0.0.0": {
-        "runtime": {
-          "CSEFTPC4Core3Cap.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        },
-        "compile": {
-          "CSEFTPC4Core3Cap.dll": {}
-        }
-      },
       "CSEFTPC4Core3Objects/1.0.0.0": {
         "runtime": {
           "CSEFTPC4Core3Objects.dll": {
@@ -2269,19 +2227,19 @@
           "CSEFTPC4Core3ObjectService.dll": {}
         }
       },
-      "CSAc4yUtilityFW/1.2020.303.1": {
-        "runtime": {
-          "CSAc4yUtilityFW.dll": {
-            "assemblyVersion": "1.2020.303.1",
-            "fileVersion": "1.2020.303.1"
-          }
-        }
-      },
       "CSAc4yServiceFW/1.2019.1213.1": {
         "runtime": {
           "CSAc4yServiceFW.dll": {
             "assemblyVersion": "1.2019.1213.1",
             "fileVersion": "1.2019.1213.1"
+          }
+        }
+      },
+      "CSEFTPC4Core3Cap/1.0.0.0": {
+        "runtime": {
+          "CSEFTPC4Core3Cap.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -2298,6 +2256,14 @@
           "CSAc4yFW.dll": {
             "assemblyVersion": "1.2019.1206.1",
             "fileVersion": "1.2019.1206.1"
+          }
+        }
+      },
+      "CSAc4yUtilityFW/1.2020.303.1": {
+        "runtime": {
+          "CSAc4yUtilityFW.dll": {
+            "assemblyVersion": "1.2020.303.1",
+            "fileVersion": "1.2020.303.1"
           }
         }
       },
@@ -3923,20 +3889,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNet.WebApi.Client/5.2.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
-      "path": "microsoft.aspnet.webapi.client/5.2.7",
-      "hashPath": "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512"
-    },
-    "Microsoft.AspNet.WebApi.Core/5.2.7": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-gM2QzApnHdy1FbKUJ/ROGJSm69P2G+HMoVd/t5Vq1O/zZ5TI4IKC9PX6nUfRt/NHgebZOIWHpB4/4K4inuy4yQ==",
-      "path": "microsoft.aspnet.webapi.core/5.2.7",
-      "hashPath": "microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512"
-    },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -5043,11 +4995,6 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "CSEFTPC4Core3Cap/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "CSEFTPC4Core3Objects/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -5058,12 +5005,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CSAc4yUtilityFW/1.2020.303.1": {
+    "CSAc4yServiceFW/1.2019.1213.1": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "CSAc4yServiceFW/1.2019.1213.1": {
+    "CSEFTPC4Core3Cap/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -5074,6 +5021,11 @@
       "sha512": ""
     },
     "CSAc4yFW/1.2019.1206.1": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CSAc4yUtilityFW/1.2020.303.1": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

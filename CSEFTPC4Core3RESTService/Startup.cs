@@ -47,6 +47,7 @@ namespace CSEFTPC4Core3RESTService
                                       builder.WithOrigins("*");
                                       builder.AllowAnyHeader();
                                       builder.AllowAnyMethod();
+                                      builder.AllowAnyOrigin();
                                   });
             });
         }

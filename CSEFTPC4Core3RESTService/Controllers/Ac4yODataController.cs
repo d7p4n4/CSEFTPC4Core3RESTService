@@ -6,6 +6,7 @@ using CSEFTPC4Core3Cap;
 using CSEFTPC4Core3Objects.Ac4yObjects;
 using CSEFTPC4Core3ObjectService.ObjectServices;
 using Microsoft.AspNet.OData;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static CSEFTPC4Core3ObjectService.ObjectServices.Ac4yPersistentChildEFService;
